@@ -1,0 +1,297 @@
+/* css reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+*{
+    padding:0;
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+}
+body{
+    background: #121316;
+    overflow: hidden;
+}
+#navbar{
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #1D1E20;
+}
+#navbar a{
+    text-decoration: none;
+}
+#navbar a h1{
+    color: #dfdfdf;
+    font-weight: 500;
+}
+#navbar a h1 span{
+    background: -webkit-linear-gradient(top right,#0061ff, #60efff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#navbar button{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    background-image:linear-gradient(to top right,#2b7cff, #60efff);
+}
+#navbar button i{
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 150px;
+}
+#home h1{
+    font-size: 3.5rem;
+    color: #ccc;
+}
+#home p{
+    width: 50%;
+    color: #ccc;
+    font-size: 17px;
+    text-align: center;
+}
+
+#home #searchBox{
+    padding: 7px;
+    background: #ffffff2a;
+    border-radius: 100px;
+    position: relative;
+    top: 50px;
+}
+#home #searchBox input{
+    padding: 10px 20px ;
+    background: transparent;
+    border: none;
+    width: 300px;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: 500;
+    text-transform: lowercase;
+    
+}
+#home #searchBox input::placeholder{
+    color: #ccc;
+}
+#home #searchBox input:focus{
+    outline: none;
+}
+#home #searchBox button{
+    padding: 14px 30px ;
+    font-weight: 600;
+    border-radius: 100px;
+    border: none;
+    background-color: #2b7cff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#loader{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: #121316;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.5s;
+}
+#loader img{
+    animation: loader 3s infinite;
+}
+@keyframes loader {
+    0%{
+       transform: translateY(0px);
+       opacity: 0; 
+    }
+    50%{
+        transform: translateY(20px);
+       opacity: 1; 
+    }
+    100%{
+        transform: translateY(0px);
+       opacity: 0; 
+    }
+}
+#popBox{
+    position: absolute;
+    z-index: 1000;
+    background: #1213165a;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateY(550px);
+    transition: 0.5s;
+}
+#popBox #popup{
+    position: absolute;
+    /* margin: 100px; */
+    border-radius: 10px;
+    width: 90%;
+    background: #1D1E20;
+    height: 93%;
+    top: 7%;
+    left: 5%;
+
+}
+#popBox #popup #close{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 45px;
+    height: 45px;
+    background: #2f2f2f;
+    border: 1px solid #3c3c3c;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+#popBox #popup #close i{
+    font-size: 18px;
+    color: #ccc;
+}
+#outputText{
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+    top: 100px;
+    font-weight: 500;
+    color: #ccc;
+    width: 80%;
+}
+#popBox #popup #tryAgain{
+    padding: 14px 30px ;
+    font-weight: 600;
+    border-radius: 100px;
+    border: none;
+    background-color: #2b7cff;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    top: 120px;
+}
+#popBox #popup #popCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#popBox #popup #popCenter img{
+    width: 40%;
+    position: relative;
+    top: 150px;
+    /* display: none; */
+}
+#popBox #popup #popCenter .centerGif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+#popBox #popup #popCenter #reasonImg{
+    display: none;
+}
+#popBox #popup #popCenter #notreasonImg{
+    display: none;
+}
+footer{
+    position: absolute;
+    padding: 20px;
+    background: #202020;
+    bottom: 0;
+    left: 0;
+    width: 97%;
+    display: flex;
+    justify-content: space-around;
+}
+footer #text{
+    color:#ccc;
+    font-weight: 500;
+}
+footer #socialBox{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+footer .socialBox a{
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2f2f2f;
+}
+footer .socialBox a i{
+    color: #ccc;
+    font-size: 1000px;
+}
+
+/** Responsive Design */
+
+@media (max-width:500px) and (min-width:400px) {
+    #home{
+        top:30px;
+    }
+    #home p{
+        width: 80%;
+    }
+    #home h1{
+        font-size: 2rem;
+        font-weight: 700;
+        width: 80%;
+        text-align: center;
+    }
+    #home #searchBox input{
+        width: 200px;
+    }
+    #popBox{
+        top: -100px;
+    }
+    #popBox #popup #reason img{
+        width: 100%;
+    }
+    #popBox #popup #notreason img{
+        width: 100%;
+    }
+}
+@media (max-width:400px) and (min-width:300px) {
+  
+    #home p{
+        width: 90%;
+    }
+    #home h1{
+        font-size: 2rem;
+        font-weight: 700;
+        width: 100%;
+        text-align: center;
+    }
+    #home #searchBox input{
+        width: 140px;
+    }
+    #navbar h1{
+        font-size: 20px;
+    }
+    #popBox #popup #reason img{
+        width: 100%;
+    }
+    #popBox #popup #notreason img{
+        width: 100%;
+    }
+}
